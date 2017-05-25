@@ -1,0 +1,72 @@
+// @import './shared/normalize.scss';
+@import './shared/normalizer.scss';
+@import './shared/reset.scss';
+@import './shared/variables.scss';
+
+body {
+    // -webkit-font-smoothing: antialiased;
+    background-color: $color--grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+main {
+    width: 1024px;
+    margin: 0 auto;
+    background-color: $color--white;
+    color: $color--grey;
+}
+.bex-logo {
+    background-color: $color--white;
+    width: 321px;
+    border: 0;
+    float: left;
+}
+.navigation-bar {
+    @include clearfix();
+    background-color: $color--dark-grey;
+    position: relative;
+} 
+.menu-bar {
+    @include clearfix();
+    float: right;
+    right: 0;
+    width: 50%;
+    @include absolute-vert-centered();
+}
+.nav-list {
+    float: right;
+} 
+    .nav-item {
+        float: left;
+        font-size: 1.5em;
+        padding: 10px 20px;
+        border-right: 1px solid $color--white;
+    }
+    .nav-item:last-child {
+        @extend .nav-item;
+        border: none;
+    }
+        .list-itinerary {
+            @include clearfix();
+            right: 0;
+            width: auto;
+            position: absolute;
+            top: 120%;
+            background-color: $color--white;
+        }
+            .sub-it-item {
+                border-right: 1px solid $color--dark-grey;
+                float: left;
+                padding: 5px 20px;
+                font-size: 1.2em;
+                color: $color--dark-grey;
+            }
+            .sub-it-item:last-child {
+                @extend .sub-it-item;
+                border: none;
+            } 
+.hide {
+    display: none;
+}
+
