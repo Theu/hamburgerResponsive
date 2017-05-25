@@ -111,34 +111,40 @@ main {
   padding: 10px 20px;
   border-right: 1px solid #ffffff; }
 
+.nav-item:hover {
+  background-color: #ffffff;
+  border-right: 1px solid #ffffff;
+  color: #3d3d3d; }
+
 .nav-item:last-child {
   border: none; }
 
-.list-itinerary {
+.list-sub-menu {
   *zoom: 1;
   right: 0;
   width: auto;
   position: absolute;
   top: 120%;
+  display: none;
   background-color: #ffffff; }
-  .list-itinerary:before, .list-itinerary:after {
+  .list-sub-menu:before, .list-sub-menu:after {
     display: table;
     content: "";
     line-height: 0; }
-  .list-itinerary:after {
+  .list-sub-menu:after {
     clear: both; }
 
-.sub-it-item, .sub-it-item:last-child {
+.sub-menu-item, .sub-menu-item:last-child {
   border-right: 1px solid #3d3d3d;
   float: left;
   padding: 5px 20px;
   font-size: 1.2em;
   color: #3d3d3d; }
 
-.sub-it-item:last-child {
+.sub-menu-item:last-child {
   border: none; }
 
-.hide {
-  display: none; }
+.show {
+  display: block; }
 
 /*# sourceMappingURL=mainStyle.css.map */

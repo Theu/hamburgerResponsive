@@ -43,30 +43,37 @@ main {
         padding: 10px 20px;
         border-right: 1px solid $color--white;
     }
+    .nav-item:hover {
+        background-color: $color--white;
+        border-right: 1px solid $color--white;
+        color: $color--dark-grey;
+    }
     .nav-item:last-child {
         @extend .nav-item;
         border: none;
     }
-        .list-itinerary {
+        .list-sub-menu {
             @include clearfix();
             right: 0;
             width: auto;
             position: absolute;
             top: 120%;
+            display: none;
             background-color: $color--white;
         }
-            .sub-it-item {
+            .sub-menu-item {
                 border-right: 1px solid $color--dark-grey;
                 float: left;
                 padding: 5px 20px;
                 font-size: 1.2em;
+                // display: none;
                 color: $color--dark-grey;
             }
-            .sub-it-item:last-child {
-                @extend .sub-it-item;
+            .sub-menu-item:last-child {
+                @extend .sub-menu-item;
                 border: none;
             } 
-.hide {
-    display: none;
+.show {
+    display: block;
 }
 

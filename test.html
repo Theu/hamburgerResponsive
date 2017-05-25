@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>Test Accordion</title>
+<script type="text/javascript">
+var ULitems = new Array();  	// store ULs having a submenu
+var opened = null;		// remember last one opened
+
+function init() {
+  // Get submenu ULs; make invisible; add onclick handler to A siblings
+  ULitems = document.getElementById('main_menu').getElementsByTagName("ul");
+  console.log(ULitems)
+  for (var i=0; i<ULitems.length; i++) {
+    ULitems[i].style.display = "none";
+    var sibA = findSibling(ULitems[i], "A");
+    console.log('siba', sibA)
+    if (sibA) addEvent(sibA, "click", openThisMenu);
+  }
+}
+
+function openThisMenu(e) {
+  // Open a submenu UL sibling (if any) to the clicked top link
+  if (opened) opened.style.display = "none";
+  var e = e || window.event;
+  var thisLink = (e.target) ? e.target: e.srcElement;
+  var hasMenu = findSibling(thisLink, "UL");
+  if (hasMenu) {
+    if (hasMenu == opened)
+      hasMenu.style.display = "none";
+    else hasMenu.style.display = "block";
+    opened = hasMenu;
+  }
+  return false;
+}
+
+function findSibling(obj,tag) {
+  var sn = obj.parentNode.childNodes;
+  for (var n=0; n<sn.length; n++) {
+    if (sn[n].nodeName == tag) return sn[n];
+  }
+  return false;
+}
+
+function addEvent(obj,evt,func) {
+  if (obj.addEventListener) {
+	obj.addEventListener(evt,func,false);
+  } else if (obj.attachEvent) {
+	obj.attachEvent('on'+evt, func);
+  } else {
+	obj['on'+evt] = func;
+  }
+}
+
+window.onload = init;
+</script>
+
+<style type="text/css">
+body               { width: 100%; }
+ul#main_menu       { width: 20%; }
+ul#main_menu li ul { margin-left: 10px; background: #EEEEEE; }
+</style>
+
+</head>
+<body>
+<ul id="main_menu">
+        <li><a href="#">Comments</a></li>
+
+        <li><a href="#">Advertising</a>
+            <ul>
+                <li><a href="#">Edit/Delete Ads</a></li>
+                <li><a href="#">Add Ads</a></li>
+            </ul>
+        </li>
+
+       <li><a href="#">Groups</a></li>
+
+       <li><a href="#">Members</a>
+            <ul>
+                <li><a href="#">Edit/Delete Member</a></li>
+                <li><a href="#">Add Member</a></li>
+            </ul>
+        </li>
+
+       <li><a href="#">Photo</a>
+            <ul>
+                <li><a href="#">Edit/Delete Photo</a></li>
+                <li><a href="#">Add a  picture</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Sections</a>
+            <ul>
+                <li><a href="#">Edit/Delete Section</a></li>
+                <li><a href="#">Add Section</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">General Settings</a></li>
+
+        <li><a href="#">Home</a></li>
+</ul>
+</body>
+</html>
