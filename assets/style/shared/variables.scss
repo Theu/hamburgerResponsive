@@ -1,0 +1,38 @@
+// COLOR
+
+$color--red: #ff0000;
+$color--white: #ffffff;
+$color--grey: #ededed;
+$color--dark-grey: rgba(61,61,61,1);
+
+// mixins
+
+// For clearing floats like a boss h5bp.com/q
+@mixin clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+        // Fixes Opera/contenteditable bug:
+        // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+        line-height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin absolute-vert-centered() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateZ(0) perspective(1px) scaleX(1);
+    -webkit-transform: translateY(-50%) translateZ(0) perspective(1px) scaleX(1);   
+}
+
+@mixin absolute-vert-oriz-centered() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) translateZ(0) perspective(1px) scaleX(1);
+}

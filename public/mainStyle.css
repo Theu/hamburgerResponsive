@@ -1,0 +1,150 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #ededed;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 300; }
+
+main {
+  width: 1024px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #ededed; }
+
+.bex-logo {
+  background-color: #ffffff;
+  width: 321px;
+  border: 0;
+  float: left; }
+
+.navigation-bar {
+  *zoom: 1;
+  background-color: #3d3d3d;
+  position: relative; }
+  .navigation-bar:before, .navigation-bar:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .navigation-bar:after {
+    clear: both; }
+
+.menu-bar {
+  *zoom: 1;
+  float: right;
+  right: 0;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateZ(0) perspective(1px) scaleX(1);
+  -webkit-transform: translateY(-50%) translateZ(0) perspective(1px) scaleX(1); }
+  .menu-bar:before, .menu-bar:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .menu-bar:after {
+    clear: both; }
+
+.nav-list {
+  float: right; }
+
+.nav-item, .nav-item:last-child {
+  float: left;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  border-right: 1px solid #ffffff; }
+
+.nav-item:hover {
+  background-color: #ffffff;
+  border-right: 1px solid #ffffff;
+  color: #3d3d3d; }
+
+.nav-item:last-child {
+  border: none; }
+
+.list-sub-menu {
+  *zoom: 1;
+  right: 0;
+  width: auto;
+  position: absolute;
+  top: 120%;
+  display: none;
+  background-color: #ffffff; }
+  .list-sub-menu:before, .list-sub-menu:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .list-sub-menu:after {
+    clear: both; }
+
+.sub-menu-item, .sub-menu-item:last-child {
+  border-right: 1px solid #3d3d3d;
+  float: left;
+  padding: 5px 20px;
+  font-size: 1.2em;
+  color: #3d3d3d; }
+
+.sub-menu-item:last-child {
+  border: none; }
+
+.show {
+  display: block; }
+
+/*# sourceMappingURL=mainStyle.css.map */
