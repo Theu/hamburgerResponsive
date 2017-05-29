@@ -5,6 +5,10 @@ $color--white: #ffffff;
 $color--grey: #ededed;
 $color--dark-grey: rgba(61,61,61,1);
 
+// breackpoint
+$breackpoint-tablet: 768px;
+
+
 // mixins
 
 // For clearing floats like a boss h5bp.com/q
@@ -35,4 +39,9 @@ $color--dark-grey: rgba(61,61,61,1);
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) translateZ(0) perspective(1px) scaleX(1);
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
 }
