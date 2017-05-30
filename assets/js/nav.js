@@ -1,34 +1,41 @@
 let subMenu = document.querySelectorAll('[data-role="sub-menu"]');
 let listSubMenu = document.getElementsByClassName('list-sub-menu')
-console.log(listSubMenu);
-var ULitems = new Array();
-var opened = null;	
+let itemToClose = document.getElementsByClassName('show')
 
-click = null;
-itemToClose = document.getElementsByClassName('show')
+let openTour = document.getElementById('openTour')
+let openProject = document.getElementById('openProject')
+let click = null;
+
+let execute = function() {
+    thisTarget.nextElementSibling.classList.remove('show')
+    if (window.innerWidth < 767) {
+        thisTarget.classList.remove('margin-bottom')
+    }
+}
+
+let toggleMenu = function() {
+    thisTarget = this;
+    if ((click = 1) && (thisTarget.nextElementSibling.classList.contains('show'))) {
+        setTimeout(execute, 2)
+    }
+    click = 0
+}
+
 let addHide = function() {
     if(click > 0) {
         for(var i = 0; i < itemToClose.length; i++) {
             itemToClose[i].classList.remove('show')
-        } 
-    click = 0;
-    }    
+        }
+    }
 }
 let addShow = function() {
-    ULitems.push(itemToClose)
-    addHide(click);
+    addHide();
     this.nextElementSibling.classList.add('show');
     click++;
-    counter++;
     if (window.innerWidth < 767) {
         this.classList.add('margin-bottom')
     }
 }
+openProject.addEventListener('click', toggleMenu)
+openTour.addEventListener('click', toggleMenu)
 subMenu.forEach(subMenu => subMenu.addEventListener('click', addShow));
-counter = null;
-
-let autoClose = function(){
-   targetParent = this.id;
-   target = targetParent.slice('open').toLowerCase();
-   temporaryChild = this.nextElementSibling
-}

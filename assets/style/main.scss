@@ -26,7 +26,7 @@ main {
     @include clearfix();
     background-color: $color--dark-grey;
     position: relative;
-} 
+}
 .menu-bar {
     @include clearfix();
     float: right;
@@ -36,7 +36,7 @@ main {
 }
 .nav-list {
     float: right;
-} 
+}
     .nav-item {
         float: left;
         font-size: 1.5em;
@@ -72,13 +72,13 @@ main {
             .sub-menu-item:last-child {
                 @extend .sub-menu-item;
                 border: none;
-            } 
+            }
 .show {
     display: block;
 }
 
-@media(max-width: $breackpoint-tablet) {
-    .navigation-bar {
+@media only screen and (max-width: $breackpoint-tablet) {
+   .navigation-bar {
     width: 321px;
     height: 100%;
     position: absolute;
@@ -101,7 +101,7 @@ main {
     width: 100%;
     text-align: center;
     position: absolute;
-    top: -85px;
+    top: -20px;
     }
     .nav-item {
         width:100%;
@@ -114,14 +114,16 @@ main {
         position: static;
     }
     .sub-menu-item, .sub-menu-item:last-child {
-    /* border-right: 1px solid #3d3d3d; */
     float: none;
-    // height: 20px;
     display: block;
     padding: 10px 0;
     font-size: 1.2em;
     color: $color--white;
-}
+    }
+    .sub-menu-item:hover {
+        background-color: $color--white;
+        color: $color--dark-grey;
+    }
 .margin-bottom {
     margin-bottom: 15px;
 }
