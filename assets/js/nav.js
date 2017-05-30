@@ -18,7 +18,6 @@ let toggleMenu = function() {
     if ((click = 1) && (thisTarget.nextElementSibling.classList.contains('show'))) {
         setTimeout(execute, 2)
     }
-    click = 0
 }
 
 let addHide = function() {
